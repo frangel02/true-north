@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 
 @Setter
 @Getter
-@Entity(name="users")
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-//@Table(name = "users")
+@Table(name = "users")
 public class User implements DatabaseEntity {
 
 //    ● User
@@ -26,7 +26,7 @@ public class User implements DatabaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
     private String username;
     private String password;
 

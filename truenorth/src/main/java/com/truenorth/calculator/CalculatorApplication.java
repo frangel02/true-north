@@ -58,24 +58,29 @@ public class CalculatorApplication {
 
 
             //operation Types
-            operationTypeList.add(new OperationType(1,"ADDITION",5));
-            operationTypeList.add(new OperationType(2,"SUBSTRACTION",6));
-            operationTypeList.add(new OperationType(3,"MULTIPLICATION",18));
-            operationTypeList.add(new OperationType(4,"DIVISION",20));
-            operationTypeList.add(new OperationType(5,"SQUARE_ROOT",15));
-            operationTypeList.add(new OperationType(6,"RANDOM_STRING",10));
+            //operationTypeList.add(new OperationType(1,"ADDITION",5));
+            operationTypeList.add(new OperationType(0,"ADDITION",5));
+
+            operationTypeList.add(new OperationType(0,"SUBSTRACTION",6));
+
+            operationTypeList.add(new OperationType(0,"MULTIPLICATION",18));
+
+            operationTypeList.add(new OperationType(0,"DIVISION",20));
+            operationTypeList.add(new OperationType(0,"SQUARE_ROOT",15));
+            operationTypeList.add(new OperationType(0,"RANDOM_STRING",10));
 
 
 
             userStatusRepository.saveAll(userStatusList);
+            operationTypeRepository.saveAll(operationTypeList);
+
 
             Stream.of("truenort", "frangel","trueNorth2").forEach(name -> {
-                User user = new User(1L ,name.toLowerCase() + "@domain.com","password123",20.0 ,UserStatus.ACTIVE);
-                userRepository.save(user);
+                User user = new User(1 ,name.toLowerCase() + "@domain.com","password123",20.0 ,UserStatus.ACTIVE);
+                    userRepository.save(user);
             });
 
 
-            operationTypeRepository.saveAll(operationTypeList);
 
            // userRepository.findAll().forEach(System.out::println);
         };
